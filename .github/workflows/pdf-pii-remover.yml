@@ -7,7 +7,7 @@ on:
   push:
     branches: [ master ]
     tags:
-      - v1
+      - v1.0.1
   pull_request:
     branches: [ master ]
 
@@ -17,13 +17,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: rihenperry/pdf_pii_remover@v1.0.1
-      with:
-        python-version: 3.6
     - name: Install pdftotext system libraries
       run: |
         sudo apt-get update
         sudo apt-get install -y build-essential libpoppler-cpp-dev pkg-config python3-dev
+    - name: checkout repository pdf_pii_remover with given tag  
+      uses: rihenperry/pdf_pii_remover@v1.0.1
     - name: mkdir output directory for pytest to run tests on transformed documents
       run: mkdir -p ~/pdf_pii_remover/output
     - name: Install dependencies
