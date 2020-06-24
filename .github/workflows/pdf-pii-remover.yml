@@ -13,15 +13,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@master
+      
     - name: Install pdftotext system libraries
       run: |
         sudo apt-get update
         sudo apt-get install -y build-essential libpoppler-cpp-dev pkg-config python3-dev
         
     - name: mkdir output directory for pytest to run tests on transformed documents
-      run: mkdir -p ~/pdf_pii_remover/output
-      
-    - uses: actions/checkout@master
+      run: mkdir -p ~/output     
       
     - name: Setup Python
       uses: actions/setup-python@v1
@@ -44,11 +44,3 @@ jobs:
     - name: Run pytest to verify PII are deleted from pdf documents
       run: |
         pytest -s -v
-        
-  docker-build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: rihenperry/pdf_pii_remover@v1.0.1
-
-      - name: Build docker image
-        run: make build
