@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: rihenperry/pdf_pii_remover@v1
+    - uses: rihenperry/pdf_pii_remover@v1.0.1
       with:
         python-version: 3.6
     - name: Install pdftotext system libraries
