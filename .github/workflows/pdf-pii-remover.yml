@@ -6,8 +6,6 @@ name: PDF PII Remover
 on:
   push:
     branches: [ master ]
-    tags:
-      - v1.0.1
   pull_request:
     branches: [ master ]
 
@@ -23,7 +21,7 @@ jobs:
     - name: mkdir output directory for pytest to run tests on transformed documents
       run: mkdir -p ~/pdf_pii_remover/output
       
-    - uses: rihenperry/pdf_pii_remover@v1.0.1
+    - uses: rihenperry/pdf_pii_remover@master
       
     - name: Setup Python
       uses: actions/setup-python@v1
