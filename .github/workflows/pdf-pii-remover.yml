@@ -21,7 +21,7 @@ jobs:
         sudo apt-get install -y build-essential libpoppler-cpp-dev pkg-config python3-dev
         
     - name: mkdir output directory for pytest to run tests on transformed documents
-      run: mkdir -p ~/output     
+      run: mkdir -p output     
       
     - name: Setup Python
       uses: actions/setup-python@v1
