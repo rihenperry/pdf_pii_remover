@@ -15,7 +15,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: rihenperry/pdf_pii_remover
+    - uses: rihenperry/pdf_pii_remover@master
       
     - name: Setup Python
       uses: actions/setup-python@v1
