@@ -6,6 +6,9 @@ name: PDF PII Remover
 on:
   push:
     branches: [ master ]
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
   pull_request:
     branches: [ master ]
 

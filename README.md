@@ -1,3 +1,4 @@
+![](https://github.com/rihenperry/pdf_pii_remover/workflows/PDF%20PII%20Remover/badge.svg)
 # PDF PII Remover
 a python utility that removes Personally Identifiable Information(PII) from given PDF documents in `input` directory and saves the revised documents in `output` directory.
 
