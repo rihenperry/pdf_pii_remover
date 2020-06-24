@@ -21,7 +21,7 @@ jobs:
     - name: mkdir output directory for pytest to run tests on transformed documents
       run: mkdir -p ~/pdf_pii_remover/output
       
-    - uses: rihenperry/pdf_pii_remover@master
+    - uses: actions/checkout@master
       
     - name: Setup Python
       uses: actions/setup-python@v1
