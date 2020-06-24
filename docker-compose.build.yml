@@ -1,0 +1,42 @@
+version: '2.4'
+
+networks:
+  default:
+    external:
+      name: pii-remover-net
+
+services:
+
+  base:
+    image: python:3.7.4-buster
+    command: bash -c "apt install build-essential libpoppler-cpp-dev pkg-config python3-dev && useradd --create-home --shell /bin/bash rihan && chown -R rihan:rihan /home/rihan/pdf-pii-remover"
+    volumes:
+      - .:/home/rihan/pdf-pii-remover
+      - pii-remover-vol:/usr/local/lib/python3.7/site-packages
+    working_dir: /home/rihan/pdf-pii-remover
+    networks:
+      - default
+
+  upgrade-pip:
+    extends:
+      service: base
+    command: pip install --upgrade pip
+
+  install:
+    extends:
+      service: base
+    command: pip3 install -r requirements.txt
+
+  quick-up:
+    extends:
+      service: base
+    command: python3 ./remove_pii.py
+
+  test:
+    extends:
+      service: base
+    command: python3 ./remove_pii_test.py
+
+volumes:
+  pii-remover-vol:
+    external: true

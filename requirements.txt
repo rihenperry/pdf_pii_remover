@@ -1,0 +1,4 @@
+pytest==5.4.3
+fpdf==1.7.2
+pdfquery==0.4.3
+pdftotext==2.1.4
