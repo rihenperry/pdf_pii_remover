@@ -21,4 +21,4 @@ RUN pip3 install -r requirements.txt
 COPY input/ input/
 
 VOLUME ["/home/rihan/pdf-pii-remover/output"]
-ENTRYPOINT python3 ./main.py
+ENTRYPOINT ["python3", "/home/rihan/pdf-pii-remover/main.py"]
