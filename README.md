@@ -9,7 +9,7 @@ Running the pii utility erases PII relevant information from `example1.pdf`
 ![](docs/example1.op-1.png)
 
 Similary, for the given second document `example2.pdf`
-![](docs/example1-1.png)
+![](docs/example2-1.png)
 
 The utility erases PII relevant information from `example2.pdf`
 ![](docs/example2.op-1.png)
